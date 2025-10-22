@@ -1,0 +1,152 @@
+/* ===================================== */
+/* TaskForm.css - Improved Styles */
+/* ===================================== */
+
+.app_header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* Use a very light shadow instead of a harsh line for a softer look */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+    border-bottom: none; /* Remove redundant border */
+    padding: 25px 0; /* Slightly more vertical padding */
+    background-color: #fff;
+    position: sticky; /* Keep the header visible when scrolling */
+    top: 0;
+    z-index: 10;
+}
+
+.app_header > form {
+    width: 700px; /* Slightly wider form for modern feel */
+    max-width: 95%;
+}
+
+.task_input { 
+    /* Base styles (slightly refined) */
+    font-size: 18px;
+    font-weight: 500;
+    background: #ffffff; /* Pure white background */
+    color: #333;
+    border: 1px solid #e0e0e0; 
+    border-radius: 8px; 
+    padding: 12px 16px; 
+    margin-bottom: 20px;
+    width: 100%;
+    
+    /* Unique Style: Transition for animation and box-shadow for depth */
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05); /* Subtle bottom shadow */
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.task_input:hover {
+    /* Slightly darker border on hover */
+    border-color: #c9c9c9;
+}
+
+.task_input:focus {
+    /* Unique Style: Stronger focus ring and border color */
+    border-color: #6457f9; /* Primary color border */
+    /* Add a clean, inner focus ring effect */
+    box-shadow: 
+        0 0 0 3px rgba(100, 87, 249, 0.25), /* Outer 'glow' focus ring */
+        0 1px 3px rgba(0, 0, 0, 0.08) inset; /* Keep a slight inset shadow */
+    outline: none; /* Crucial to remove default browser outline */
+}
+
+.task_input::placeholder { 
+    /* Unique Style: Slightly italic and less obtrusive */
+    font-style: italic; 
+    color: #a8a8a8; 
+    transition: color 0.3s ease;
+}
+
+.task_input:focus::placeholder {
+    /* Fade placeholder out slightly when focused */
+    color: transparent; 
+}
+
+.task_from_bottom_line {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* --- Tags --- */
+.tag {
+    font-size: 14px;
+    font-weight: 600; /* Bolder text for better contrast */
+    background-color: #f0f0f0; /* Neutral background for unselected tags */
+    border: 1px solid transparent; /* Start with a transparent border */
+    border-radius: 6px;
+    padding: 6px 12px; /* Adjusted padding */
+    margin-right: 8px; /* Slightly reduced margin */
+    cursor: pointer;
+    color: #555;
+    transition: all 0.2s ease-in-out;
+}
+
+.tag:hover:not(.tag_selected) {
+    background-color: #e6e6e6;
+    color: #333;
+}
+
+.tag_selected {
+    font-weight: 700;
+    color: #fff; /* White text on colored background (handled by inline styles, but good to ensure contrast) */
+    /* Use a distinct border/shadow for selection */
+    border: 1px solid #6457f9;
+    /* Optional: Remove the box-shadow if relying on inline style backgrounds for color */
+    box-shadow: 0 0 0 2px rgba(100, 87, 249, 0.5); /* Glowing effect */
+}
+
+
+/* --- Status Dropdown --- */
+.task_status {
+    appearance: none; /* Remove default OS styling for a cleaner look */
+    font-size: 16px;
+    font-weight: 500;
+    border: 1px solid #e0e0e0;
+    border-radius: 6px;
+    width: 110px; /* Slimmer width */
+    height: 40px;
+    padding: 0 10px;
+    margin-right: 15px;
+    background-color: #fff;
+    cursor: pointer;
+    background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%236457f9%22%20d%3D%22M287%20188.4L146.2%2047.9%205.4%20188.4h281.6z%22%2F%3E%3C%2Fsvg%3E'); /* Custom caret */
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 10px;
+}
+
+.task_status:focus {
+    border-color: #6457f9;
+    outline: none;
+}
+
+/* --- Submit Button --- */
+.task_submit {
+    font-size: 16px;
+    font-weight: 600; /* Bolder text */
+    background-color: #6457f9;
+    color: #fff;
+    border-radius: 6px;
+    padding: 8px 20px;
+    border: none;
+    cursor: pointer;
+    /* Add a subtle shadow for a raised effect */
+    box-shadow: 0 4px 6px rgba(100, 87, 249, 0.3);
+    transition: all 0.2s ease-in-out;
+}
+
+.task_submit:hover {
+    background-color: #554ae0;
+    box-shadow: 0 6px 8px rgba(100, 87, 249, 0.4);
+    transform: translateY(-1px); /* Slight lift on hover */
+}
+
+.task_submit:active {
+    background-color: #4a38cc;
+    box-shadow: 0 2px 3px rgba(100, 87, 249, 0.4);
+    transform: translateY(0);
+}

@@ -1,0 +1,21 @@
+/* taskcolumn.css */
+
+.task_column {
+    flex: 1; /* Allows columns to take equal width */
+    max-width: 300px; /* Optional: Set a max width for large screens */
+    min-width: 280px;
+}
+
+.task_column_heading {
+    display: flex;
+    align-items: center;
+    font-size: 24px;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.task_column_icon {
+    width: 30px;
+    margin-right: 10px;
+}
